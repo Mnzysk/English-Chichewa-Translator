@@ -1,0 +1,155 @@
+fruit	chipatso
+fruits	zipatso
+night	usiku
+afternoon	madzulo
+bed	kama
+pepper	tsabola
+brother	m'bale
+dancing	kuvina
+Evening	usiku
+Excuse me	zikomo
+farming	ulimi
+get up	dzuka
+girlfriend	chibwenzi
+boyfreind	chibwenzi
+Good night	usiku wabwino
+night	usiku
+leafs	masamba
+leafs	tsamba
+land	malo
+earth	dziko
+hit	menya
+How?	bwanji?
+I am full	ndakhuta
+I'm not interested	sindikufuna
+I'm sick	ndikudwala
+Indians	amwenye
+indian	mmwenye
+madam	mayi
+Men	amuna
+man	mamuna
+morning	mmawa
+noon	masana
+noon time	masama
+oil	mafuta
+peanut	chiponde
+price	mtemgo
+rabbit	kalulu
+red	fiila
+remain well	tsalani bwino
+thank you	zikomo
+see you late	tionana
+shoe	nsapato
+relish	ndiwo
+sir	bambo
+sorry	pepani
+story	nthano
+sweet potato	matata
+sweet potatoes	mbatata
+tea	tiyi
+toilet	chimbudzi
+travel well	muyende bwino
+nice journey	ulindo wa bwino
+untrue	bodza
+what about you	kaya inu
+how about you	kaya inu
+why?	chifukwa chiyani?
+you are jealous	muli ndi nsanje
+tale	nthano
+add	wonjeza
+address	keyala
+admire	silira
+advice	malangizo
+advise	langiza
+aeroplane	ndege
+afternoon	masana
+agriculture	ulimi
+airport	bwalo la ndege
+althuogh	ngakhale
+amuse	seketsa
+acient wisdom	nzeru ka kale
+and	ndi
+and	ndipo
+and you	ndi inu
+anger	mkwiyo
+animal	chilombo
+animal skin	chikopa
+anouncement	cholengeza
+answer	yankho
+answer	yankha
+ant	nyerere
+Arab	mluya
+arabs	aluya
+area	dera
+argument	mkangano
+arm	mkono
+arms	mikono
+hand	dzanja
+hands	manja
+arrive	fika
+alive	moyo
+life	moyo
+assistance	chithandizo
+assure	tsimikiza
+attract	kopa
+attracted to	kopeka
+aunt	azakhali
+ax	nkhwangwa
+back	msana
+bad	choipa
+bag	nthumba
+ball	mpira
+banana	nthochi
+basket	dengu
+bathe	samba
+be afraid	chita mantha
+born	badwa
+be clever	chenjera
+be conquered	gonjetsedwa
+beef	nyama ya ng'ombe
+beer	mowa
+beg	pempha
+behide	mbuyo
+below	pansi pa
+between	pakati
+bicycle	njinga ya kapalasa
+big	kula
+firewood	nkhuni
+munthu	person
+bird	mbalame
+birthday	tsiku lobadwa
+bite	luma
+black	kuda
+blankets	zofunda
+blindness	khunga
+blood	magazi
+blow	nkhoya
+body	thupi
+bone	fupa
+boot	jombo
+bottle	botolo
+boxing	masewelo a nkhoya
+boy	mnyamata
+boys	anyamata
+girl	mtsikana
+girls	atsikana
+branch	nthambi
+bread	chingwa
+thank you	zikomo
+thanks	zikomo
+break	nyenya
+break fast	mdzukilo
+breast	bere
+breath	puma
+bring	mlatho
+bring	bweletsa
+bring up children	lela ana
+broadcast	lengeza
+broom	tsache
+brother	achemwene
+brotherhood	chibale
+brush off	sasa
+bucket	ndowa
+bundle	mtolo
+bundles	mitolo
+tip	nsonga
