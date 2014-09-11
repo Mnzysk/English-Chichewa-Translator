@@ -182,7 +182,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
 		    
-    // on upgrade drop older tables			 
+    // on upgrade drop older tables ***		 
 	public void onUpgrade (SQLiteDatabase db, int oldVersion, int newVersion) {
 		if (oldVersion >= newVersion) return;
 			db.execSQL("DROP DATABASE IF EXISTS " + DATABASE_NAME +";");		
