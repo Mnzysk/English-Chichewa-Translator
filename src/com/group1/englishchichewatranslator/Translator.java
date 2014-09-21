@@ -21,6 +21,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.Menu;
@@ -64,10 +65,12 @@ public class Translator extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_translator);
 		
-		myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		//myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		myhelper = new DBHelper(getApplicationContext());
+		
 		
 		d= myhelper.getReadableDatabase();
-		Log.d("Out", "Out");
+		/*Log.d("Out", "Out");
 		if(!myhelper.getReadableDatabase().rawQuery("SELECT * FROM transModel;", null).moveToFirst()){
 			pDialog = ProgressDialog.show(Translator.this, "", "Loading Database... Please wait It may take few minutes\nDikilani kwa mphindi zingapo");
 			
@@ -82,9 +85,17 @@ public class Translator extends Activity {
 			}.start();
 			
 			
+		}*/
+		try {
+			myhelper.open();
+		} catch (SQLException ex) {
+			// TODO Auto-generated catch block
+			 throw ex;
 		}
 		
-		db = myhelper.getReadableDatabase();
+		db= myhelper.getReadableDatabase();
+		
+		//db = myhelper.getReadableDatabase();
 		
 		
 		

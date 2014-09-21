@@ -79,6 +79,8 @@ public class Suggest2 extends Activity {
 				public void onClick(View arg0) {
 				
 					clearEditText(engInput, "Lembani apa\t\t write here");
+					clearEditText(chichInput,"Lembani apa\t\t write here");
+					clearEditText(commentInput, "Lembani apa\t\t write here");
 				}
 			});
 		

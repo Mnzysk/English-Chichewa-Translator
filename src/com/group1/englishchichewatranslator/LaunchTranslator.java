@@ -1,5 +1,6 @@
 package com.group1.englishchichewatranslator;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 import android.view.Menu;
@@ -41,7 +43,7 @@ public class LaunchTranslator extends TabActivity{
 	JSONParser jsonParser = new JSONParser();
 	JSONParser jsParser = new JSONParser();
 	
-	private static String url_sync_lanmodel= "http://10.0.2.2:80/trans_proj/sync_lan_model.php";
+	private static String url_sync_lanmodel= "http://10.0.2.2:80/trans_proj/trans_proj/get_new_translations.php";
 	private static String url_sync_transnmodel="http://10.0.2.2:80/trans_proj/sync_trans_model.php";
     private static final String TAG_SUCCESS = "success";
     
@@ -58,25 +60,39 @@ public class LaunchTranslator extends TabActivity{
 		
 		setContentView(R.layout.activity_launch_translator);
 		setupTabHost();
-		myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		myhelper = new DBHelper(getApplicationContext());
+		//myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
 		
-		db= myhelper.getReadableDatabase();
-		Log.d("Out", "Out");
-		if(!myhelper.getReadableDatabase().rawQuery("SELECT * FROM transModel;", null).moveToFirst()){
-			pDialog = ProgressDialog.show(LaunchTranslator.this, "", "Setting up the application...\nMay take several minutes resume to other Aplications \nZithenga thawi pang'ono mutha kumapanga zina");
+		
+		
+		pDialog = ProgressDialog.show(LaunchTranslator.this, "", "Setting up the application...\nMay take several minutes resume to other Aplications \nZithenga thawi pang'ono mutha kumapanga zina");
 			
 			new Thread(){
 				
 				public void run() {
 					
-					myhelper.populateDB(getAssets(),myhelper);
+					try {
+						myhelper.createDB();
+						
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					pDialog.dismiss();
 					
 				}
 			}.start();
 			
+			try {
+				myhelper.open();
+			} catch (SQLException ex) {
+				// TODO Auto-generated catch block
+				 throw ex;
+			}
+			
+			db= myhelper.getReadableDatabase();
+			
 			Log.d("IN", "Out");
-		}
 		
 		internetConn = new InternetConnDetector(getApplicationContext());
 		displaynofication();
@@ -278,7 +294,7 @@ public class LaunchTranslator extends TabActivity{
 		                    		String query = "INSERT INTO transmodel(eng,chich,prob1,prob2) VALUES('"+eng+"','"+chich+"',"+prob1+","+prob2+");";
 		                    		Log.d("Query", query);
 		                    		db.execSQL(query);
-		                    		myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		                    		myhelper = new DBHelper(getApplicationContext());
 		                    		db= myhelper.getReadableDatabase();
 		                       
 		                    	}

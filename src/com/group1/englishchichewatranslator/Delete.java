@@ -29,7 +29,8 @@ public class Delete extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		myDbHelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		myDbHelper = new DBHelper(getApplicationContext());
+		//myhelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
 		
 		db =myDbHelper.getReadableDatabase();
 		c = db.rawQuery("SELECT * FROM history ORDER BY id DESC;",null);

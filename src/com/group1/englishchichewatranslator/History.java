@@ -67,7 +67,7 @@ public class History extends Activity {
 	}
 
 	private void setupHisView() {
-		myHelper = new DBHelper(getApplicationContext(), "translateDB", null, 1);
+		myHelper = new DBHelper(getApplicationContext());
 		
 		db = myHelper.getReadableDatabase();
 		hisArray = new ArrayList<Bilingual>();
