@@ -43,8 +43,10 @@ public class LaunchTranslator extends TabActivity{
 	JSONParser jsonParser = new JSONParser();
 	JSONParser jsParser = new JSONParser();
 	
-	private static String url_sync_lanmodel= "http://10.0.2.2:80/trans_proj/trans_proj/get_new_translations.php";
-	private static String url_sync_transnmodel="http://10.0.2.2:80/trans_proj/sync_trans_model.php";
+	//private static String url_sync_lanmodel= "http://10.0.2.2:80/trans_proj/get_new_translations.php";
+	private static String url_sync_lanmodel= "http://192.168.15.1:80/trans_proj/get_new_translations.php";
+	//private static String url_sync_transnmodel="http://10.0.2.2:80/trans_proj/get_new_translations.php";
+	private static String url_sync_transnmodel= "http://192.168.15.1:80/trans_proj/get_new_translations.php";
     private static final String TAG_SUCCESS = "success";
     
     JSONArray dataToSync = null;
@@ -276,7 +278,7 @@ public class LaunchTranslator extends TabActivity{
 							Log.d("In Tran Sync", "Succeed");
 		                    // Data found
 		                    // Getting Array of Database content
-		                    dataToSync = json.getJSONArray("approved");
+		                    dataToSync = json.getJSONArray("translation");
 		 
 		                    // looping through All Products
 		                    //if(lows != dataToSync.length()){
@@ -306,7 +308,7 @@ public class LaunchTranslator extends TabActivity{
 		                    // no Data found
 		                    // Launch Translator Activity
 		                    Intent i = new Intent(getApplicationContext(),
-		                            Translator.class);
+		                            LaunchTranslator.class);
 		                    // Closing all previous activities
 		                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		                    startActivity(i);

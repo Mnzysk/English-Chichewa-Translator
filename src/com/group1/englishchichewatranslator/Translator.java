@@ -38,8 +38,10 @@ import android.widget.Toast;
 public class Translator extends Activity {
 	String input="";
 	String outputString="";
+	String translation ="";
 	SQLiteDatabase db ;
 	Cursor solutions;
+	ArrayList<Sentence> sentences;
 	
 	SQLiteDatabase d;
 	DBHelper myhelper ;
@@ -111,26 +113,41 @@ public class Translator extends Activity {
 			
 			@Override
 			public void onClick(View arg0) {
-				input= inputText.getText().toString().toLowerCase().trim();
+				input= inputText.getText().toString().toLowerCase().replace("'", "\'").trim();
 				//String querry = "SELECT * FROM Codes WHERE name = '"+ input+ "';";
 				
 				//solutions = db.rawQuery("SELECT * FROM translation;",null);
 				if(input.isEmpty()){
 					Toast.makeText(getApplicationContext(),"You did not input anything \nSimunalembe malembo", Toast.LENGTH_LONG).show();
-					//return;
+					return;
 				}
 				//String solution = getTranslation(input).replaceAll("[.][a-z]", ".").replaceAll("\\sa\\s", " ").replaceAll("\\san\\s", " ").replaceAll("\\sthe\\s", " ");
-				
-				solution.reset();
+				sentences = (new Passage(input+".")).getSentences();
+				translation="";
+				/*solution.reset();
 				getTranslation(input);
 				outputString =solution.toString();
-				output.setText(outputString);
+				output.setText(outputString);*/
+				
+				for(int i =0 ;i<sentences.size();i++){
+					
+					solution.reset();
+					getTranslation(sentences.get(i).returnText().replace(".", "").replaceAll("'", "MNZYSKYYY").replaceAll("\"", "\"\""));
+					outputString =solution.toString()+sentences.get(i).returnPunctuation();
+					
+					translation = translation +" "+outputString;
+					 
+				}
+				
+				
+				output.setText(translation);
+				Log.d("translated After Setting text view",translation);
 				
 				if (!input.isEmpty() && !outputString.isEmpty()) {
 					//Handling History
 					db.execSQL("CREATE TABLE IF NOT EXISTS history(id INTEGER PRIMARY KEY AUTOINCREMENT,eng text NOT NULL,chich TEXT NOT NULL);");
 					String insertHistory = "INSERT INTO history(eng,chich) VALUES('"
-							+ input + "','" + solution.toString() + "');";
+							+ input.replaceAll("'","MNZYSKYYY") + "','" + translation.replaceAll("'", "MNZYSKYYY") + "');";
 					db.execSQL(insertHistory);
 					Log.d("History", "Insert");
 				}
@@ -161,10 +178,12 @@ public class Translator extends Activity {
 				// TODO Auto-generated method stub
 				inputText.setText("");
 				inputText.setHint("Lembani apa");
+				output.setText("");
+				output.setHint("Thanthauzo la Chichewa");
 			}
 		});
 		
-/*		ImageView edit = (ImageView) findViewById(R.id.editTra);
+	ImageView edit = (ImageView) findViewById(R.id.edittra);
 		edit.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View arg0) {
@@ -172,7 +191,7 @@ public class Translator extends Activity {
 				myAlertDialog(mesage);	
 				
 			}
-		});*/
+		});
 		
 	}
 	
@@ -267,7 +286,9 @@ public class Translator extends Activity {
 		try {
 			String query = "SELECT * FROM transModel WHERE eng ='"+text+"' AND prob1 > 0.8;";
 			
+			Log.d("SQL", query);
 			solutions = db.rawQuery(query, null);
+			Log.d("SQL", "Executed");
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -306,7 +327,7 @@ public class Translator extends Activity {
 				}
 			}
 			Log.d("Done", max.getTarget().trim());
-			return max.getTarget().trim();
+			return max.getTarget().trim().replaceAll("MNZYSKYYY", "'");
 		}
 		Log.d("TAG", "Nothing Returned");
 		

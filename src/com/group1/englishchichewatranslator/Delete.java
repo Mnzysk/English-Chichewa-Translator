@@ -47,8 +47,8 @@ public class Delete extends Activity {
 		int it =0;
 		if(c.moveToFirst()){
 			do {
-				codes.add(c.getString(c.getColumnIndex("eng")));
-				items[it] = c.getString(c.getColumnIndex("eng"));
+				codes.add(c.getString(c.getColumnIndex("eng")).replaceAll("MNZYSKYYY", "'"));
+				items[it] = c.getString(c.getColumnIndex("eng")).replaceAll("MNZYSKYYY", "'");
 				
 				
 			} while (c.moveToNext());
@@ -73,7 +73,7 @@ public class Delete extends Activity {
 				for (int i = 0; i < itemcount; i++) {
 					if(sparseBooleanArray.get(i)){
 						String item = histList.getItemAtPosition(i).toString();
-						String sql = "DELETE FROM history WHERE eng = '" + item +"';";
+						String sql = "DELETE FROM history WHERE eng = '" + item.replaceAll("'", "MNZYSKYYY") +"';";
 						db.execSQL(sql);
 						Toast.makeText(getApplicationContext(), "Sucessfully Deleted", Toast.LENGTH_LONG).show();
 						Delete.this.finish();

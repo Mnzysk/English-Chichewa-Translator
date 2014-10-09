@@ -31,7 +31,8 @@ public class SuggestTranslation extends Activity {
     EditText commentInput;
  
     //connect to the host
-    private static String url_suggest = "http://10.0.2.2:80/trans_proj/add_suggestion.php";
+    //private static String url_suggest = "http://10.0.2.2:80/trans_proj/add_suggestion.php";
+    private static String url_suggest = "http://192.168.15.1:80/trans_proj/add_suggestion.php";
     
     private static final String TAG_SUCCESS = "success";
  

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B9B9C8" >
+    android:background="#D7DBDE" >
 
     <TextView
         android:id="@+id/textView1"
@@ -22,7 +22,7 @@
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1" 
         android:layout_marginRight="15dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/contaiter_dropshodow"
         >
         <RelativeLayout >
 
@@ -37,12 +37,12 @@
 
         <ImageView
             android:id="@+id/clearenglish"
-           android:layout_width="30dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="2dp"
-            android:src="@drawable/exit" />
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_action_remove" />
 
         </RelativeLayout>
     </TableRow>
@@ -54,7 +54,7 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginRight="15dp"
-        android:background="#FFFFFF" >
+        android:background="@drawable/contaiter_dropshodow" >
 		<RelativeLayout >
         <EditText
             android:id="@+id/chichewa_suggest"
@@ -64,12 +64,12 @@
 
         <ImageView
             android:id="@+id/clearchichewa"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="2dp"
-            android:src="@drawable/exit" />
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_action_remove" />
 
         </RelativeLayout>
         
@@ -100,7 +100,7 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_below="@+id/textView3" 
         android:layout_marginRight="15dp"
-        android:background="#FFFFFF"
+        android:background="@drawable/contaiter_dropshodow"
         >
 		<RelativeLayout >
         <EditText
@@ -111,12 +111,12 @@
 
         <ImageView
             android:id="@+id/clearcomment"
-            android:layout_width="30dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="2dp"
-            android:src="@drawable/exit" />
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_action_remove" />
 
 		</RelativeLayout>
     </TableRow>

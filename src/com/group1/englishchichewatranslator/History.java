@@ -162,9 +162,9 @@ public class History extends Activity {
 		
 		history.moveToFirst();
 		do{
-			String eng= history.getString(history.getColumnIndex("eng"));
+			String eng= history.getString(history.getColumnIndex("eng")).replaceAll("MNZYSKYYY", "'");
 			Log.d("History", eng);
-			String chich = history.getString(history.getColumnIndex("chich"));
+			String chich = history.getString(history.getColumnIndex("chich")).replaceAll("MNZYSKYYY", "'");
 			Log.d("History", chich);
 			listDataHeader.add(eng);
 			List<String> child = new ArrayList<String>();

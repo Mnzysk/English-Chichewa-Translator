@@ -10,7 +10,7 @@ public class Help extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.help);
 		setWebView();
-		String help = "file:///android_asset/help.html";
+		String help = "file:///android_asset/about/about.htm";
 		webview.loadUrl(help);
 	}
 	private void setWebView() {
