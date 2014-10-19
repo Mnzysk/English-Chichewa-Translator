@@ -132,14 +132,14 @@ public class Translator extends Activity {
 				for(int i =0 ;i<sentences.size();i++){
 					
 					solution.reset();
-					getTranslation(sentences.get(i).returnText().replace(".", "").replaceAll("'", "MNZYSKYYY").replaceAll("\"", "\"\""));
+					getTranslation(sentences.get(i).returnText().replace(".", "").replaceAll("'", "MNZYSKYYY").replaceAll("\"", "\"\"").trim());
 					outputString =solution.toString()+sentences.get(i).returnPunctuation();
 					
 					translation = translation +" "+outputString;
 					 
 				}
 				
-				
+				translation = translation.replaceAll("MNZYSKYYY", "'");
 				output.setText(translation);
 				Log.d("translated After Setting text view",translation);
 				

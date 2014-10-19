@@ -44,9 +44,9 @@ public class LaunchTranslator extends TabActivity{
 	JSONParser jsParser = new JSONParser();
 	
 	//private static String url_sync_lanmodel= "http://10.0.2.2:80/trans_proj/get_new_translations.php";
-	private static String url_sync_lanmodel= "http://192.168.15.1:80/trans_proj/get_new_translations.php";
+	private static String url_sync_lanmodel= "http://192.168.177.1:80/trans_proj/get_new_translations.php";
 	//private static String url_sync_transnmodel="http://10.0.2.2:80/trans_proj/get_new_translations.php";
-	private static String url_sync_transnmodel= "http://192.168.15.1:80/trans_proj/get_new_translations.php";
+	private static String url_sync_transnmodel= "http://192.168.177.1:80/trans_proj/get_new_translations.php";
     private static final String TAG_SUCCESS = "success";
     
     JSONArray dataToSync = null;
@@ -287,15 +287,16 @@ public class LaunchTranslator extends TabActivity{
 		                    		JSONObject c = dataToSync.getJSONObject(i);
 		 
 		                        // Storing each json item in variable
-		                    		String eng = c.getString("eng").toLowerCase().trim();
-		                    		String chich = c.getString("chich").toLowerCase().trim();
+		                    		String eng = c.getString("eng").toLowerCase().replaceAll("'", "MNZYSKYYY").trim();
+		                    		String chich = c.getString("chich").toLowerCase().replaceAll("'", "MNZYSKYYY").trim();
 		                    		String prob1 = c.getString("prob1").toLowerCase().trim();
 		                    		String prob2 = c.getString("prob2").toLowerCase().trim();
 		                    		Log.d("Sync", eng +"\t"+ chich);
 		                        
-		                    		String query = "INSERT INTO transmodel(eng,chich,prob1,prob2) VALUES('"+eng+"','"+chich+"',"+prob1+","+prob2+");";
+		                    		String query = "INSERT INTO transModel(eng,chich,prob1,prob2) VALUES('"+eng+"','"+chich+"',"+prob1+","+prob2+");";
 		                    		Log.d("Query", query);
 		                    		db.execSQL(query);
+		                    		Log.d("SQL", "Query executed");
 		                    		myhelper = new DBHelper(getApplicationContext());
 		                    		db= myhelper.getReadableDatabase();
 		                       
