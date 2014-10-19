@@ -53,7 +53,7 @@ public class Suggest2 extends Activity {
 		 commentInput = (EditText) findViewById(R.id.comment_suggest);
 		 if(getIntent()!=null){
 			 engInput.setText(getIntent().getExtras().getString("english"));
-			 chichInput.setText(getIntent().getExtras().getString("chichewa"));
+			 chichInput.setText(getIntent().getExtras().getString("chichewa").replaceAll("MNZYSKYYY", "'"));
 		 }
 		 Button suggest = (Button) findViewById(R.id.submit);
 		 
