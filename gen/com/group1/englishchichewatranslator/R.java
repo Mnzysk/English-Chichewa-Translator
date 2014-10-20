@@ -34,27 +34,29 @@ public final class R {
         public static final int ic_action_refresh=0x7f02000a;
         public static final int ic_action_remove=0x7f02000b;
         public static final int ic_launcher=0x7f02000c;
-        public static final int refresh=0x7f02000d;
-        public static final int save=0x7f02000e;
-        public static final int search=0x7f02000f;
+        public static final int iconic_03=0x7f02000d;
+        public static final int refresh=0x7f02000e;
+        public static final int save=0x7f02000f;
+        public static final int search=0x7f020010;
     }
     public static final class id {
-        public static final int action_exit=0x7f080022;
-        public static final int action_help=0x7f080021;
-        public static final int action_settings=0x7f08001f;
-        public static final int action_sync=0x7f080020;
+        public static final int action_exit=0x7f080023;
+        public static final int action_help=0x7f080022;
+        public static final int action_settings=0x7f080020;
+        public static final int action_sync=0x7f080021;
         public static final int cancelDel=0x7f080008;
-        public static final int chichewa_suggest=0x7f080018;
-        public static final int clearchichewa=0x7f080019;
-        public static final int clearcomment=0x7f08001d;
-        public static final int clearenglish=0x7f080016;
+        public static final int chichewa_suggest=0x7f080019;
+        public static final int clearchichewa=0x7f08001a;
+        public static final int clearcomment=0x7f08001e;
+        public static final int clearenglish=0x7f080017;
         public static final int cleartext=0x7f080002;
-        public static final int comment_suggest=0x7f08001c;
+        public static final int comment_suggest=0x7f08001d;
         public static final int delete=0x7f08000e;
         public static final int deleteAll=0x7f08000a;
         public static final int dilaoglist=0x7f080007;
         public static final int edittra=0x7f080006;
-        public static final int english_suggest=0x7f080015;
+        public static final int english_suggest=0x7f080016;
+        public static final int imageView1=0x7f080014;
         public static final int inputText=0x7f080001;
         public static final int lblListHeader=0x7f08000f;
         public static final int lblListItem=0x7f080010;
@@ -65,13 +67,13 @@ public final class R {
         public static final int radioButton2=0x7f080012;
         public static final int radioButton3=0x7f080013;
         public static final int refreshHis=0x7f08000d;
-        public static final int submit=0x7f08001e;
+        public static final int submit=0x7f08001f;
         public static final int tableRow1=0x7f080000;
         public static final int tableRow2=0x7f080004;
-        public static final int tableRow3=0x7f08001b;
-        public static final int textView1=0x7f080014;
-        public static final int textView2=0x7f080017;
-        public static final int textView3=0x7f08001a;
+        public static final int tableRow3=0x7f08001c;
+        public static final int textView1=0x7f080015;
+        public static final int textView2=0x7f080018;
+        public static final int textView3=0x7f08001b;
         public static final int transHelp=0x7f08000b;
         public static final int translate=0x7f080003;
     }
@@ -84,7 +86,8 @@ public final class R {
         public static final int list_group=0x7f030005;
         public static final int list_item=0x7f030006;
         public static final int settings=0x7f030007;
-        public static final int suggest=0x7f030008;
+        public static final int splash_screen=0x7f030008;
+        public static final int suggest=0x7f030009;
     }
     public static final class menu {
         public static final int launch_translator=0x7f070000;

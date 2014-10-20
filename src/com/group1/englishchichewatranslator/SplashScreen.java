@@ -7,7 +7,7 @@ import android.os.Handler;
 
 public class SplashScreen extends Activity {
 	
-	private static int time_out= 10000;
+	private static int time_out= 600;
 	protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen);

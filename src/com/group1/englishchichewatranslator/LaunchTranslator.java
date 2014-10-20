@@ -57,6 +57,9 @@ public class LaunchTranslator extends TabActivity{
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		
+		
 		setContentView(R.layout.activity_launch_translator);
 		setupTabHost();
 		myhelper = new DBHelper(getApplicationContext());
