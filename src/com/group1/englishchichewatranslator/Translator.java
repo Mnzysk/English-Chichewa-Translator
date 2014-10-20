@@ -122,27 +122,14 @@ public class Translator extends Activity {
 					return;
 				}
 				//String solution = getTranslation(input).replaceAll("[.][a-z]", ".").replaceAll("\\sa\\s", " ").replaceAll("\\san\\s", " ").replaceAll("\\sthe\\s", " ");
-				sentences = (new Passage(input+".")).getSentences();
-				translation="";
-				/*solution.reset();
-				getTranslation(input);
-				outputString =solution.toString();
-				output.setText(outputString);*/
-				
-				for(int i =0 ;i<sentences.size();i++){
-					
-					solution.reset();
-					getTranslation(sentences.get(i).returnText().replace(".", "").replaceAll("'", "MNZYSKYYY").replaceAll("\"", "\"\"").trim());
-					outputString =solution.toString()+sentences.get(i).returnPunctuation();
-					
-					translation = translation +" "+outputString;
-					 
-				}
-				
-				translation = translation.replaceAll("MNZYSKYYY", "'");
-				output.setText(translation);
+				decode(output);
 				Log.d("translated After Setting text view",translation);
 				
+				insertHistory();
+				
+			}
+
+			private void insertHistory() {
 				if (!input.isEmpty() && !outputString.isEmpty()) {
 					//Handling History
 					db.execSQL("CREATE TABLE IF NOT EXISTS history(id INTEGER PRIMARY KEY AUTOINCREMENT,eng text NOT NULL,chich TEXT NOT NULL);");
@@ -154,8 +141,9 @@ public class Translator extends Activity {
 				if(fails>1){
 					//Toast.makeText(getApplicationContext(),"No Available Translation\nPalibe tanthauzo lake", Toast.LENGTH_LONG).show();
 				}
-				
 			}
+
+		
 		});
 		output.setOnLongClickListener(new OnLongClickListener() {
 			
@@ -333,6 +321,27 @@ public class Translator extends Activity {
 		
 		return null;
 		
+	}
+	private void decode(final TextView output) {
+		sentences = (new Passage(input+".")).getSentences();
+		translation="";
+		/*solution.reset();
+		getTranslation(input);
+		outputString =solution.toString();
+		output.setText(outputString);*/
+		
+		for(int i =0 ;i<sentences.size();i++){
+			
+			solution.reset();
+			getTranslation(sentences.get(i).returnText().replace(".", "").replaceAll("'", "MNZYSKYYY").replaceAll("\"", "\"\"").trim());
+			outputString =solution.toString()+sentences.get(i).returnPunctuation();
+			
+			translation = translation +" "+outputString;
+			 
+		}
+		
+		translation = translation.replaceAll("MNZYSKYYY", "'");
+		output.setText(translation);
 	}
 	
 	//Sync class
